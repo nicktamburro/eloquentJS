@@ -1,0 +1,37 @@
+<head>
+	<title></title>
+</head>
+<body>
+<h1> check out the console!</h1>
+
+<script>
+
+//CHESS BOARD   // to fix, make it so the strings are just "#" or " ";  
+//a y and x axis. do that tomorrow. 
+
+//TODO needs a second loop, so that it does the multiple lines
+let y = 1;
+let string = "";
+
+let boardMaker = function(size){
+
+for (let i = 0 ; i < size ; i++){
+	if (y % 2 != 0){
+		string = "# ";
+	}else{
+		string = " #";
+	}
+
+	console.log(string.repeat(size));
+		//count++;
+}
+
+}
+
+boardMaker(8);
+boardMaker(120);
+
+</script>
+
+</body>
+</html>

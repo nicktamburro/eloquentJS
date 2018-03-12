@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+
+
+
+
+let numbersForList = [1, 2, 3];
+
+let arrayToList = function(numbersForList){
+
+}
+
+
+//--------------------------------------------------------------------------------------------///
+
+
+let x = [12, 13, 14, 15];
+let newArray = [];
+
+let reverseArray = function(x){
+	for (i= 0 ; i<x.length ; i++){
+		newArray.unshift(x[i]);
+	}
+}
+
+let reverseArrayInPlace = function(x){
+//STUDY THIS A LOT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//MEMORIZE THIS AND BE ABLE TO DO IT IN YOUR SLEEP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+	for (let i = 0 ; i<Math.floor(x.length / 2); i++){
+		let old = x[i];
+		x[i] = x[x.length - 1 - i];
+		x[x.length - 1 - i] = old;
+		
+	}
+	console.log(x);
+}
+
+reverseArrayInPlace(x);
+console.log(x);
+reverseArray(x);
+console.log(x);
+
+console.log(newArray);
+
+let newRange = [];
+
+let range = function(start, end, step){
+
+if (step > 0){
+for (i = start ; i<end+1 ; i+= step){
+	newRange.push(i);
+	}
+	return newRange;
+}
+}else if (step < 0){
+	or (i = start ; i<end+1 ; i-= step){
+	newRange.push(i);
+	}
+	return newRange;
+}
+}
+
+let sum = function(array){
+	let total = 0;
+
+	for (i = 0 ; i<array.length ; i++){
+		total += array[i];
+	}
+	console.log(total);
+}
+
+console.log(newRange);
+sum(range(1, 18, 3));
+
+*/
+
+/*let Bcount = 0;
+
+let countBs = function(string, target){
+	for (let i = 0 ; i<string.length ; i++){
+			if (string.charAt(i).toLowerCase() === target){
+				++Bcount;
+			}
+	}
+
+	console.log(Bcount);
+}
+
+countBs("BabyBuggyBumperBBBBbbbbBBB", "b");*/
+
+
+//MY SOLUTION
+/*let isEven = function(n){
+	
+if (n === 0){
+	console.log("even!");
+} else if (n === 1){
+	console.log("odd!");
+} else if (n > 1){
+	n = n - 2;
+	console.log("trying again");
+	isEven(n);
+} else if (n < 0){
+	n = Math.abs(n);
+	isEven(n);
+}
+}
+
+isEven(-19);
+
+//BOOK SOLUTION
+function isEven(n) {
+  if (n == 0)
+    return true;
+  else if (n == 1)
+    return false;
+  else if (n < 0)
+    return isEven(-n);
+  else
+    return isEven(n - 2);
+}
+
+*/
+
+// MINIMUM FUNCTION
+// let minimum = function(one, two){
+// 	if (isNaN(one) === true || isNaN(two) === true){
+// 		console.log("not numbers!");
+// 	}
+// 	if (one < two){
+// 		console.log(one);
+// 	}if (two < one){
+// 		console.log(two);
+// 	}if (one = two){
+// 		console.log("they're equal");
+// 	}
+// }
+
+// minimum(53, 85);
+// minimum(84, 23);
+// minimum(23, 23);
+// minimum("asdf", true);
+
+
+//BOOK SOLUTION TO CHESSBOARD
+/*var size = 8;
+
+var board = "";
+
+for (var y = 0; y < size; y++) {
+  for (var x = 0; x < size; x++) {
+    if ((x + y) % 2 == 0)
+      board += " ";
+    else
+      board += "#";
+  }
+  board += "\n";
+}
+
+console.log(board);*/
+
+
+
+
+//CHESS BOARD   // to fix, make it so the strings are just "#" or " ";  
+//a y and x axis. do that tomorrow. 
+/*let y = 1;
+let string = "";
+
+let boardMaker = function(size){
+
+for (let i = 0 ; i < size ; i++){
+	if (y % 2 != 0){
+		string = "# ";
+	}else{
+		string = " #";
+	}
+
+	console.log(string.repeat(size));
+		//count++;
+}
+
+}
+
+boardMaker(8);*/
+
+
+
+//FIZZBUZZ
+/*let count = 1;
+
+for (let i = 0 ; i<100 ; i++){
+	if f (count % 3 == 0){
+		console.log("fizz");
+	}else if (count % 5 == 0){
+		console.log("buzz")
+	}else{
+		console.log(count);
+	}
+/*/	//count ++;
+//(count % 3 == 0 && count % 5 == 0){
+		//console.log("fizzbuzz");
+	//}else i*/*/
+
+
+
+
+</script>
+</body>
+</html>
