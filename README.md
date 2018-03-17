@@ -1,3 +1,3 @@
 # eloquentJS
 
-A place to work on exercises from the Eloquent Javascript book!
+A place to work on exercises from Marijn Haverbeke's "Eloquent Javascript" book!
