@@ -3,6 +3,8 @@
 //CHESS BOARD   // to fix, make it so the strings are just "#" or " ";  
 //a y and x axis. do that tomorrow. 
 
+//TODO, forgot they wanted a /n character to be part of this... throw that in!
+
 let y = 1;
 let string = "";
 let size = 8;
