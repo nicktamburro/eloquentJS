@@ -4,6 +4,9 @@
 
 
 function isEven(number){
+    if (number < 0){
+        number = Math.abs(number);
+    }
     if (number === 0){
         console.log("true");
         return true;
@@ -16,4 +19,4 @@ function isEven(number){
     }
 }
 
-isEven(75);
+isEven(-20);
