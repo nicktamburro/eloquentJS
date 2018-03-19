@@ -18,10 +18,10 @@ function reverseArrayInPlace(array){
 let placeholder = "";
 
 for (i=0 ; i<array.length / 2 ; i++){
-    placeholder = array[i];
-    array[i] = array[array.length - 1];
-    array[array.length - 1] = placeholder;
-    i++;
+  placeholder = array[array.length - 1];
+  array[array.length - 1] = array[i];
+  array[i] = placeholder;
+  i++;
 }
 
 console.log(array);
