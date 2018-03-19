@@ -11,8 +11,6 @@ function reverseArray(array){
     console.log(reversed);
 }
 
-
-
 function reverseArrayInPlace(array){
 
 let placeholder = "";
