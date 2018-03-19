@@ -11,7 +11,7 @@ function reverseArray(array){
     console.log(reversed);
 }
 
-//so this one needs 3 steps... 
+
 
 function reverseArrayInPlace(array){
 
