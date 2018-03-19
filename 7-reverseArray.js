@@ -11,4 +11,21 @@ function reverseArray(array){
     console.log(reversed);
 }
 
-reverseArray(["a", "a#", "b", "c", "c#", "d", "d#", "e", "f", "f#", "g", "g#"]);
+//so this one needs 3 steps... 
+
+function reverseArrayInPlace(array){
+
+let placeholder = "";
+
+for (i=0 ; i<array.length / 2 ; i++){
+    placeholder = array[i];
+    array[i] = array[array.length - 1];
+    array[array.length - 1] = placeholder;
+    i++;
+}
+
+console.log(array);
+
+}
+
+reverseArrayInPlace(["a", "a#", "b", "c", "c#", "d", "d#", "e", "f", "f#", "g", "g#"]);
