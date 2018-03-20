@@ -2,10 +2,8 @@
 
 function arrayToList(array){
 
-for (i=0 ; i<array.length ; i++){
-    let value = array.pop(i);
-    let object = {value: value}
-    console.log(object);
+for(i = array.length-1 ; i >= 0 ; i--) {
+console.log(array[i]);
 }
 
 }
