@@ -1,15 +1,14 @@
 //this is going to be a big one
 
-function arrayToList(array){
 
-for(i = array.length-1 ; i >= 0 ; i--) {
-let list = {};
 
-    let value = array[i];
-    let object = {value: value, rest: list}
-    console.log(object);
-}
-
+function arrayToList(array) {
+  let list = null;
+  for (let i = array.length - 1; i >= 0; i--) {
+    list = {value: array[i], rest: list};
+  }
+  //return list;
+  console.log(list);
 }
 
 function listToArray(list){
