@@ -23,7 +23,8 @@ function listToArray(list){
   console.log(array);
 }
 
-function prepend(element, list){
+//I need to comment these, and teach them to myself again.  this whole page. 
+function prepend(value, list){
     return {value, rest: list};
 }
 
