@@ -16,22 +16,21 @@ function arrayToList(array) {
 
 function listToArray(list){
   let array = [];
-//I don't fully understand this loop yet...
+//I don't fully understand this loop yet... it's in the hints of the book, I changed "node" to "i"
   for (i = list; i; i = i.rest) {
     array.push(i.value);
   }
   console.log(array);
 }
 
-
-
-
 function prepend(element, list){
-
+    return {value, rest: list};
 }
 
 function nth(list){
-
+    if (!list) return undefined;
+  else if (n == 0) return list.value;
+  else return nth(list.rest, n - 1);
 }
 
 //arrayToList([1, 2, 3]);
