@@ -3,17 +3,19 @@
 
 function deepEqual(a, b){
     if (typeof(a) != typeof(b)){
-        console.log("false and weird");
+        
     }
     if (typeof(a) == "object" && typeof(b) == "object"){
-        console.log("objects!");
+      let aString = toString(a);
+      let bString = toString(b);
+      console.log(aString, bString);
 
     }
     if (a == b){
-        console.log("true");
+      
     }
     else {
-        console.log("false");
+    
 }
 }
     
@@ -21,4 +23,4 @@ function deepEqual(a, b){
 deepEqual(2, 2);
 deepEqual(2, 3);
 deepEqual(2, "fox");
-deepEqual({}, {});
+deepEqual({value: 1}, {value: 1});
