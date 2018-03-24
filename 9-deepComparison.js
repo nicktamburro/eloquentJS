@@ -1,11 +1,14 @@
 //write deepEqual() takes 2 values, and returns true only if they're same value, or are object with same properties, whose
 //values are also equal when compared with a recursive call to deepEqual...
 
+//this will need to get way cleaned up, and make the loop work in a more general sense...
+//but it's a start
+
 function deepEqual(a, b){
     if (typeof(a) != typeof(b)){
         
     }
-    if (typeof(a) == "object" && typeof(b) == "object"){
+    if ((typeof(a) == "object" && typeof(a) != null) && (typeof(b) == "object" && typeof(b) != null)){
       var xA;
       var xB;
       var countA = 0;
@@ -19,16 +22,16 @@ function deepEqual(a, b){
             console.log(countA);
     }
         for (x in b) {
-            stringB += x + " " + a[x];
+            stringB += x + " " + b[x];
             countB++;
             console.log(stringB);
             console.log(countB);
     }
     if (countA != countB){
-        return false;
+        console.log("false, different value count");
     }
     if (stringA != stringB){
-        return false;
+        console.log("false, different strings");
     }
 
     }
@@ -44,4 +47,4 @@ function deepEqual(a, b){
 deepEqual(2, 2);
 deepEqual(2, 3);
 deepEqual(2, "fox");
-deepEqual({value: 1}, {value: 1});
+deepEqual({value: 1, head: "bang"}, {value: 1, head: "band", boy: "big"});
