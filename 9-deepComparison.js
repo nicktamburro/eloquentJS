@@ -6,9 +6,30 @@ function deepEqual(a, b){
         
     }
     if (typeof(a) == "object" && typeof(b) == "object"){
-      let aString = toString(a);
-      let bString = toString(b);
-      console.log(aString, bString);
+      var xA;
+      var xB;
+      var countA = 0;
+      var countB = 0;
+      var stringA = "";
+      var stringB = "";
+        for (x in a) {
+            stringA += x + " " + a[x];
+            countA++;
+            console.log(stringA);
+            console.log(countA);
+    }
+        for (x in b) {
+            stringB += x + " " + a[x];
+            countB++;
+            console.log(stringB);
+            console.log(countB);
+    }
+    if (countA != countB){
+        return false;
+    }
+    if (stringA != stringB){
+        return false;
+    }
 
     }
     if (a == b){
