@@ -3,8 +3,12 @@
 
 //this is maybe working, but the code looks dumb to have so many repetitions... let's see if we can fix it tomorrow
 
+//okay no, remember it needs to have recursion!
+
 function deepEqual(a, b){
     if (typeof(a) != typeof(b)){
+        console.log("types don't match!");
+        return false;
         
     }
     if ((typeof(a) == "object" && typeof(a) != null) && (typeof(b) == "object" && typeof(b) != null)){
@@ -23,16 +27,24 @@ function deepEqual(a, b){
     }
     if (countA != countB){
         console.log("false, different value count");
+        return false;
     }
     if (stringA != stringB){
         console.log("false, different strings");
+        return false;
     }
+   deepEqual(stringA, stringB);
 
-    }
-    if (a == b){
+}
+
+    if (a === b){
+        console.log("a match! non-objects");
+        return true;
       
     }
     else {
+        console.log("something else!");
+        return false; 
     
 }
 }
@@ -42,3 +54,5 @@ deepEqual(2, 2);
 deepEqual(2, 3);
 deepEqual(2, "fox");
 deepEqual({value: 1, head: "band"}, {value: 1, head: "bang", boy: "band"});
+deepEqual({value: 10, dudes: "bro", bros: "dudes", noWorries: "bro"}, {value: 10, dudes: "bro", bros: "dudes", noWorries: "bro"});
+deepEqual({value: null}, {value: null});
