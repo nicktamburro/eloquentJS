@@ -1,10 +1,8 @@
 //write deepEqual() takes 2 values, and returns true only if they're same value, or are object with same properties, whose
 //values are also equal when compared with a recursive call to deepEqual...
 
-//this is maybe working, but the code looks dumb to have so many repetitions... let's see if we can fix it tomorrow
-
-//okay no, remember it needs to have recursion!
-
+//okay cool, his idea is way better of course, and it doesn't use this string trick...
+//fix it tomorrow night
 function deepEqual(a, b){
     if (typeof(a) != typeof(b)){
         console.log("types don't match!");
@@ -49,7 +47,6 @@ function deepEqual(a, b){
 }
 }
     
-
 deepEqual(2, 2);
 deepEqual(2, 3);
 deepEqual(2, "fox");
