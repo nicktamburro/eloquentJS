@@ -53,3 +53,52 @@ function drawTable(rows){
 
 	return rows.map(drawRow).join("\n");
 }
+
+//okay I understand this one at least
+function repeat(string, times){
+	var result = "";
+	for (var i=0; i<times; i++)
+	result	 += string;
+		return result;
+}
+
+function TextCell(text){
+	this.text = textt.split("\n");
+}
+
+TextCell.pototype.minWidth = function(){
+	return this.text.reduce(function(width, line){
+		return Math.max(width, line.length);
+	}, 0);
+};
+
+TextCell.pototype.minHeight = function(){
+	return this.text.length;
+};
+
+Text.Cell.prototype.draw = function(width, height){
+	var result = [];
+	for (var i = 0; i<height; i++){
+		var line = this.text[i] || "";
+		result.push(line + repeat(" ", width - line.length));
+	}
+	return result;
+};
+
+///////////////////////////////////////////////////////
+//now we try it
+//okay, for tomorrow, now that we actually CALL it, I can start to trace it.
+//do that. 
+
+var rows = [];
+for (var i = 0 ; i < 5 ; i++){
+	var row = [];
+	for (var j = 0; j < 5; j++){
+		if ((j + i) % 2 == 0)
+			row.push(new TextCell("##"));
+		else
+			row.push(new TextCell(" "));
+	}
+	rows.push(row);
+}
+
