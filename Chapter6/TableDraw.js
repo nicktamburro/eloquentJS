@@ -25,6 +25,20 @@ function colWidths(rows) {
 	});
 }
 
+function UnderlinedCell(inner){
+	this.inner = inner;
+};
+
+UnderlinedCell.prototype.minWidth = function(){
+	return this.inner.minWidth();
+};
+UnderlinedCell.prototype.minHeight = function(){
+return this.inner.minHeight() + 1;
+};
+UnderlinedCell.prototype.draw = function(width, height){
+	return this.inner.draw(width, height - 1)
+	.concat([repeat("-", width)]);
+};
 
 //the draw table function uses the internal helper fucntion drawRow to draw all rows, the joins them together
 //with newline characters... 
@@ -61,9 +75,9 @@ function repeat(string, times){
 	result	 += string;
 		return result;
 }
-
+///5. so TextCell then activated minHeight, minWidth, and draw...
 function TextCell(text){
-	this.text = textt.split("\n");
+	this.text = text.split("\n");
 }
 
 TextCell.pototype.minWidth = function(){
@@ -90,13 +104,20 @@ Text.Cell.prototype.draw = function(width, height){
 //okay, for tomorrow, now that we actually CALL it, I can start to trace it.
 //do that. 
 
+//1. we make a rows array...
 var rows = [];
+//2. we loop something 5 times
 for (var i = 0 ; i < 5 ; i++){
+	//3. a new arrray called row
 	var row = [];
+	//4. we loop 5 times
 	for (var j = 0; j < 5; j++){
+		//it's making a grid or chessboard, if the i and j index add up to even, push a ##
+		//into row... but first, jump up to TextCell
 		if ((j + i) % 2 == 0)
 			row.push(new TextCell("##"));
 		else
+		//if not, push an empty space into row, but first jump up to TextCell...
 			row.push(new TextCell(" "));
 	}
 	rows.push(row);
