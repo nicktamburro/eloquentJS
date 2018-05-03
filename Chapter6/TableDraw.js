@@ -77,6 +77,7 @@ function repeat(string, times){
 }
 ///5. so TextCell then activated minHeight, minWidth, and draw...
 function TextCell(text){
+	//here we split the text into new lines for each cell
 	this.text = text.split("\n");
 }
 
@@ -98,6 +99,36 @@ Text.Cell.prototype.draw = function(width, height){
 	}
 	return result;
 };
+
+function UnderlinesCell(inner){
+	this.inner = inner;
+};
+
+UnderlinedCell.prototype.minWidth = function(){
+	return thisinner.minWidth();
+};
+
+UnderlinedCell.prototype.minHeight = function(){
+	return this.inner.minHeight() + 1;
+};
+
+UnderlinedCell.prototype.draw = function(width, height){
+	return this.inner.draw(width, height - 1)
+	.concat([repeat("-", width)]);
+};
+
+function dateTable(data){
+	var keys = Object.keys(data[0]);
+	var headers = keys.map(function(name){
+		return new UnderlinedCell(new TextCell(name));
+	});
+	var body = data.map(function(row){
+			return keys.map(function(name) {
+				return new TextCell(new TextCell(name));
+			});
+		});
+			return [headers].concat(body);
+}
 
 ///////////////////////////////////////////////////////
 //now we try it
@@ -122,4 +153,9 @@ for (var i = 0 ; i < 5 ; i++){
 	}
 	rows.push(row);
 }
+
+
+
+
+
 

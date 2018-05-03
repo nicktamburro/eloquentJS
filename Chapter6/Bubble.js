@@ -1,4 +1,4 @@
-function bubbleSort(array){
+function    				bubbleSort(array){
 
 
 console.log("original: " + array);
